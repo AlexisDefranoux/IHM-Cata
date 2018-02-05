@@ -1,6 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 /.idea
-IHM.iml
+*.iml
 /resources
 /build
 /out
