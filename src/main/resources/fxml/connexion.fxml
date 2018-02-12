@@ -10,25 +10,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.ConnectionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.ConnectionController">
    <children>
-      <Label layoutX="238.0" layoutY="49.0" text="Connection">
+      <Label layoutX="392.0" layoutY="180.0" text="Connection">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label layoutX="167.0" layoutY="150.0" text="Email" />
-      <Label layoutX="124.0" layoutY="193.0" text="Mot de passe" />
-      <ImageView fitHeight="53.0" fitWidth="92.0" layoutX="140.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+      <Label layoutX="321.0" layoutY="281.0" text="Email" />
+      <Label layoutX="278.0" layoutY="324.0" text="Mot de passe" />
+      <ImageView fitHeight="53.0" fitWidth="92.0" layoutX="294.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/images/P_Polytech.png" />
          </image>
       </ImageView>
-      <Separator layoutX="37.0" layoutY="111.0" prefHeight="2.0" prefWidth="527.0" />
-      <Button fx:id="btnValider" layoutX="273.0" layoutY="244.0" mnemonicParsing="false" text="Valider" />
-      <TextField fx:id="txtEmail" layoutX="235.0" layoutY="146.0" prefHeight="25.0" prefWidth="213.0" />
-      <TextField fx:id="txtMdp" layoutX="235.0" layoutY="189.0" prefHeight="25.0" prefWidth="213.0" />
-      <Hyperlink layoutX="464.0" layoutY="269.0" text="Mot de passe oublié ?" />
+      <Separator layoutX="191.0" layoutY="242.0" prefHeight="2.0" prefWidth="527.0" />
+      <Button fx:id="btnValider" layoutX="427.0" layoutY="375.0" mnemonicParsing="false" text="Valider" />
+      <TextField fx:id="txtEmail" layoutX="389.0" layoutY="277.0" prefHeight="25.0" prefWidth="213.0" />
+      <TextField fx:id="txtMdp" layoutX="389.0" layoutY="320.0" prefHeight="25.0" prefWidth="213.0" />
+      <Hyperlink layoutX="618.0" layoutY="400.0" text="Mot de passe oublié ?" />
    </children>
 </AnchorPane>

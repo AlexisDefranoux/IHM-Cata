@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
@@ -46,6 +47,8 @@ public class HomeController {
     @FXML
     private Button btnRechercher;
 
+    @FXML
+    private Hyperlink lienDeconnexion;
 
     public void initialize(){
         btnDeclarerIncident.setOnMouseClicked(event -> {
