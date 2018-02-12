@@ -1,9 +1,18 @@
 package fr.polytech.ihm;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.stage.Stage;
+
+import java.awt.event.MouseEvent;
+import java.io.IOException;
 
 public class HomeController {
 
@@ -36,5 +45,21 @@ public class HomeController {
 
     @FXML
     private Button btnRechercher;
+
+
+    public void initialize(){
+        btnDeclarerIncident.setOnMouseClicked(event -> {
+            FXMLLoader loader = new FXMLLoader();
+            try {
+                Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream("/fxml/DeclarationIncident.fxml"));
+                Scene scene = new Scene(rootNode);
+                Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                appStage.setScene(scene);
+                appStage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
 
 }
