@@ -6,20 +6,13 @@ import javafx.scene.control.TextField;
 
 public class ConnectionController {
 
+    @FXML
+    private Button btnValider;
 
+    @FXML
+    private TextField txtEmail;
 
-    public class PleaseProvideControllerClassName {
-
-        @FXML
-        private Button btnValider;
-
-        @FXML
-        private TextField txtEmail;
-
-        @FXML
-        private TextField txtMdp;
-
-    }
-
+    @FXML
+    private TextField txtMdp;
 
 }
