@@ -1,9 +1,10 @@
 package fr.polytech.ihm;
 
+import fr.polytech.ihm.model.Incident;
+import fr.polytech.ihm.model.enums.Categorie;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -18,8 +19,8 @@ import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.awt.*;
 import java.io.IOException;
+import java.util.Date;
 
 public class DeclarationIncidentController {
     private static final Logger log = LoggerFactory.getLogger(DeclarationIncidentController.class);
@@ -63,6 +64,14 @@ public class DeclarationIncidentController {
         });
         idValider.setOnMouseClicked(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
+                String titre = idTitre.getText();
+                String description = idDescription.getText();
+                //Categorie categorie = idCategorie.getSelectedItem().get(0);
+                String localisation = idLocalisation.getText();
+               // Date date =;
+                String importance ;
+
+               // Incident incident = new Incident();
                 backToHome(event);
             }
         });
