@@ -46,6 +46,6 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <CheckBox layoutX="279.0" layoutY="74.0" mnemonicParsing="false" text="Voir mes incidents" />
+      <CheckBox fx:id="mesIncidents" layoutX="279.0" layoutY="74.0" mnemonicParsing="false" text="Voir mes incidents" />
    </children>
 </AnchorPane>
