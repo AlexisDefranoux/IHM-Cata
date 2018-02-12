@@ -43,6 +43,7 @@ public class DeclarationIncidentController {
     @FXML
     private Slider idImportance;
 
+    @FXML
     public void initialize(){
 
     }
