@@ -1,19 +1,23 @@
 package fr.polytech.ihm;
 
+import fr.polytech.ihm.model.enums.Categorie;
+import fr.polytech.ihm.model.enums.Etat;
+
 import java.util.Date;
 
 public class Incident {
+
     private String titre;
     private String description;
-    private String categorie;
+    private Categorie categorie;
     private String localisation;
     private Date dateMishap;
     private Date dateDeclaration;
     private String importance;
     private String auteur;
-    private String etat;
+    private Etat etat;
 
-    public Incident(String titre, String description, String categorie, String localisation, Date dateMishap, Date dateDeclaration, String importance, String auteur, String etat) {
+    public Incident(String titre, String description, Categorie categorie, String localisation, Date dateMishap, Date dateDeclaration, String importance, String auteur, Etat etat) {
         this.titre = titre;
         this.description = description;
         this.categorie = categorie;
