@@ -1,4 +1,4 @@
-package fr.polytech.ihm;
+package fr.polytech.ihm.controller;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -12,6 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 
@@ -50,7 +51,13 @@ public class HomeController {
     @FXML
     private Hyperlink lienDeconnexion;
 
+    @FXML
+    private Label labelNom;
+
     public void initialize(){
+
+
+
         btnDeclarerIncident.setOnMouseClicked(event -> {
             FXMLLoader loader = new FXMLLoader();
             try {

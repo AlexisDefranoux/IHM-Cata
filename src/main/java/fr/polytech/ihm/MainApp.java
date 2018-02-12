@@ -30,7 +30,7 @@ public class MainApp extends Application {
         scene.getStylesheets().add("/styles/styles.css");
         stage.setResizable(false);
 
-        stage.setTitle("Hello JavaFX and Maven");
+        stage.setTitle("Service de déclaration d'incidents");
         stage.setScene(scene);
         stage.show();
     }
