@@ -22,7 +22,7 @@
           <TableColumn fx:id="clnImportance" minWidth="0.0" prefWidth="124.66667175292969" text="Importance" />
             <TableColumn fx:id="clnTitre" prefWidth="113.33332824707031" text="Titre" />
             <TableColumn fx:id="clnCategorie" prefWidth="166.66665649414062" text="Catégorie" />
-            <TableColumn fx:id="clnLieu" prefWidth="143.33334350585938" text="Lieu" />
+            <TableColumn fx:id="clnLieu" prefWidth="143.33334350585938" text="Localisation" />
             <TableColumn fx:id="clnDescription" prefWidth="252.66668701171875" text="Description" />
             <TableColumn fx:id="clnDate1" prefWidth="103.66666412353516" text="Etat" />
         </columns>

@@ -54,7 +54,20 @@ public class HomeController {
         btnDeclarerIncident.setOnMouseClicked(event -> {
             FXMLLoader loader = new FXMLLoader();
             try {
-                Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream("/fxml/DeclarationIncident.fxml"));
+                Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream("/fxml/declarationIncident.fxml"));
+                Scene scene = new Scene(rootNode);
+                Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                appStage.setScene(scene);
+                appStage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        lienDeconnexion.setOnMouseClicked(event -> {
+            FXMLLoader loader = new FXMLLoader();
+            try {
+                Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream("/fxml/connexion.fxml"));
                 Scene scene = new Scene(rootNode);
                 Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 appStage.setScene(scene);
