@@ -3,13 +3,13 @@ package fr.polytech.ihm.model.enums;
 public enum Categorie {
     MENAGE("Ménage"), REPARER("Réparer"), AUTRE("Autre");
 
-    private String string;
+    private String name;
 
-    Categorie(String string) {
-        this.string = string;
+    Categorie(String name) {
+        this.name = name;
     }
 
-    public String getString() {
-        return string;
+    public String toString() {
+        return name;
     }
 }

@@ -1,5 +1,8 @@
 package fr.polytech.ihm.controller;
 
+import fr.polytech.ihm.model.Incident;
+import fr.polytech.ihm.model.enums.Categorie;
+import fr.polytech.ihm.model.enums.Etat;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +21,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.Date;
 
 public class DeclarationIncidentController {
     private static final Logger log = LoggerFactory.getLogger(DeclarationIncidentController.class);
@@ -29,7 +33,7 @@ public class DeclarationIncidentController {
     private TextArea idDescription;
 
     @FXML
-    private ComboBox<?> idCategorie;
+    private ComboBox<Categorie> idCategorie;
 
     @FXML
     private TextField idLocalisation;
@@ -56,29 +60,34 @@ public class DeclarationIncidentController {
     public void initialize(){
         idAnnuler.setOnMouseClicked(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
-                backToHome(event);
+                backToHome(event,idAnnuler);
             }
         });
         idValider.setOnMouseClicked(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
                 String titre = idTitre.getText();
                 String description = idDescription.getText();
-                //Categorie categorie = idCategorie.getSelectedItem().get(0);
+                Categorie categorie = idCategorie.getSelectionModel().getSelectedItem();
                 String localisation = idLocalisation.getText();
-               // Date date =;
-                String importance ;
+                Date date = new Date();
+                String importance = "faible";
+                Etat etat = Etat.declaration;
 
-               // Incident incident = new Incident();
-                backToHome(event);
+                if(titre != ""){
+                    Incident incident = new Incident(titre, description, categorie, localisation, date, date,
+                            importance,"Auteur",etat);
+
+                    backToHome(event,idValider);
+                }
             }
         });
     }
-    private void backToHome(MouseEvent event){
+    private void backToHome(MouseEvent event,Button btn){
         if (event.getButton() == MouseButton.PRIMARY) {
             String fxmlFile = "/fxml/home.fxml";
             FXMLLoader loader = new FXMLLoader();
             try {
-                Stage stage = (Stage) idValider.getScene().getWindow();
+                Stage stage = (Stage) btn.getScene().getWindow();
                 Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
 
                 Scene scene = new Scene(rootNode);
