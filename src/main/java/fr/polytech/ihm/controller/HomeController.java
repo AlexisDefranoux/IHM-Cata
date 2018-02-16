@@ -69,7 +69,7 @@ public class HomeController {
             }
         });
 
-        /*lienDeconnexion.setOnMouseClicked(event -> {
+        lienDeconnexion.setOnMouseClicked(event -> {
             FXMLLoader loader = new FXMLLoader();
             try {
                 Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream("/fxml/connexion.fxml"));
@@ -80,7 +80,7 @@ public class HomeController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        });*/
+        });
     }
 
 }
