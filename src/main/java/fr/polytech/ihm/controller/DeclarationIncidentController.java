@@ -1,6 +1,7 @@
 package fr.polytech.ihm.controller;
 
 import fr.polytech.ihm.model.Incident;
+import fr.polytech.ihm.model.Session;
 import fr.polytech.ihm.model.enums.Categorie;
 import fr.polytech.ihm.model.enums.Etat;
 import javafx.event.EventHandler;
@@ -42,10 +43,10 @@ public class DeclarationIncidentController {
     private DatePicker idDate;
 
     @FXML
-    private ComboBox<?> idHeure;
+    private ComboBox<Integer> idHeure;
 
     @FXML
-    private ComboBox<?> idMin;
+    private ComboBox<Integer> idMin;
 
     @FXML
     private Button idAnnuler;
@@ -58,6 +59,9 @@ public class DeclarationIncidentController {
 
     @FXML
     public void initialize(){
+
+        iniCombobox();
+
         idAnnuler.setOnMouseClicked(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
                 backToHome(event,idAnnuler);
@@ -71,12 +75,13 @@ public class DeclarationIncidentController {
                 String localisation = idLocalisation.getText();
                 Date date = new Date();
                 String importance = "faible";
+                String auteur = Session.getInstance().getEmail();
                 Etat etat = Etat.declaration;
 
-                if(titre != ""){
+                if(!idTitre.getText().isEmpty()){
                     Incident incident = new Incident(titre, description, categorie, localisation, date, date,
-                            importance,"Auteur",etat);
-
+                            importance,auteur,etat);
+                    System.out.println(incident.toString());
                     backToHome(event,idValider);
                 }
             }
@@ -97,6 +102,19 @@ public class DeclarationIncidentController {
                 e.printStackTrace();
             }
         }
+    }
+
+    private void iniCombobox(){
+        for(int i=0; i<24; i++){
+            idHeure.getItems().add(i);
+        }
+        for(int i=0; i<60; i+=5){
+            idMin.getItems().add(i);
+        }
+        for(Categorie c : Categorie.values()){
+            idCategorie.getItems().add(c);
+        }
+
     }
 
 }

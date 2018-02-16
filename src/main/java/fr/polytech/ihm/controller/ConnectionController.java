@@ -1,5 +1,6 @@
 package fr.polytech.ihm.controller;
 
+import fr.polytech.ihm.model.Session;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -24,10 +26,19 @@ public class ConnectionController {
     @FXML
     private TextField txtMdp;
 
+    @FXML
+    private Text ErreurLogin;
+
     public void initialize(){
+
         btnValider.setOnMouseClicked(new EventHandler<MouseEvent>() {
              public void handle(MouseEvent event) {
-                 backToHome(event,btnValider);
+                 if(!txtEmail.getText().isEmpty()){
+                     Session.getInstance().setEmail(txtEmail.getText());
+                     backToHome(event,btnValider);
+                 }else{
+                     ErreurLogin.setVisible(true);
+                 }
              }
          });
     }

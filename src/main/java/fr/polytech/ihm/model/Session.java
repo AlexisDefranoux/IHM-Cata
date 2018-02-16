@@ -12,4 +12,12 @@ public class Session {
     private Session(String email) {
         this.email = email;
     }
+
+    public static void setEmail(String email) {
+        Session.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 }
