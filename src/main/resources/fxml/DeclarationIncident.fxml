@@ -38,7 +38,7 @@
       </Label>
       <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="Titre*" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
       <TextField fx:id="idTitre" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-      <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="Description*" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="Description" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
       <TextArea fx:id="idDescription" prefHeight="44.0" prefWidth="672.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
       <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="Catégorie" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
       <ComboBox fx:id="idCategorie" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
@@ -64,7 +64,7 @@
                   <Insets right="10.0" />
                </GridPane.margin>
             </Label>
-            <ComboBox fx:id="idHeure" prefWidth="150.0" promptText="heure" GridPane.columnIndex="2">
+            <ComboBox fx:id="idHeure" prefWidth="150.0" GridPane.columnIndex="2">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
@@ -74,7 +74,7 @@
                   <Insets left="10.0" />
                </GridPane.margin>
             </Label>
-            <ComboBox fx:id="idMin" prefWidth="150.0" promptText="minute" GridPane.columnIndex="4">
+            <ComboBox fx:id="idMin" prefWidth="150.0" GridPane.columnIndex="4">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>

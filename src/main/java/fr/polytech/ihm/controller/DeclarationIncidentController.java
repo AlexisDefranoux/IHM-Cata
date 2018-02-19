@@ -22,6 +22,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DeclarationIncidentController {
@@ -60,13 +62,14 @@ public class DeclarationIncidentController {
     @FXML
     public void initialize(){
 
-        iniCombobox();
+        initCombobox();
 
         idAnnuler.setOnMouseClicked(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
                 backToHome(event,idAnnuler);
             }
         });
+
         idValider.setOnMouseClicked(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
                 String titre = idTitre.getText();
@@ -74,15 +77,15 @@ public class DeclarationIncidentController {
                 Categorie categorie = idCategorie.getSelectionModel().getSelectedItem();
                 String localisation = idLocalisation.getText();
                 Date date = new Date();
-                String importance = "faible";
+                int importance = (int) idImportance.getValue();
                 String auteur = Session.getInstance().getEmail();
-                Etat etat = Etat.declaration;
 
                 if(!idTitre.getText().isEmpty()){
-                    Incident incident = new Incident(titre, description, categorie, localisation, date, date,
-                            importance,auteur,etat);
+                    Incident incident = new Incident(titre, description, categorie, localisation, date, importance, auteur);
                     System.out.println(incident.toString());
                     backToHome(event,idValider);
+                }else{
+
                 }
             }
         });
@@ -104,7 +107,7 @@ public class DeclarationIncidentController {
         }
     }
 
-    private void iniCombobox(){
+    private void initCombobox(){
         for(int i=0; i<24; i++){
             idHeure.getItems().add(i);
         }
@@ -114,7 +117,11 @@ public class DeclarationIncidentController {
         for(Categorie c : Categorie.values()){
             idCategorie.getItems().add(c);
         }
-
+        Date actuelle = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String dat = dateFormat.format(actuelle);
+        System.out.println("======================");
+        System.out.println(dat);
     }
 
 }

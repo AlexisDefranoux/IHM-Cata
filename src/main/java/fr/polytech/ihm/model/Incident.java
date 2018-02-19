@@ -14,20 +14,20 @@ public class Incident {
     private String localisation;
     private Date dateMishap;
     private Date dateDeclaration;
-    private String importance;
+    private int importance;
     private String auteur;
     private Etat etat;
 
-    public Incident(String titre, String description, Categorie categorie, String localisation, Date dateMishap, Date dateDeclaration, String importance, String auteur, Etat etat) {
+    public Incident(String titre, String description, Categorie categorie, String localisation, Date dateDeclaration, int importance, String auteur) {
         this.titre = titre;
         this.description = description;
         this.categorie = categorie;
         this.localisation = localisation;
-        this.dateMishap = dateMishap;
+        this.dateMishap = new Date();
         this.dateDeclaration = dateDeclaration;
         this.importance = importance;
         this.auteur = auteur;
-        this.etat = etat;
+        this.etat = Etat.declaration;
     }
 
     public String getTitre() {
@@ -54,7 +54,7 @@ public class Incident {
         return dateDeclaration;
     }
 
-    public String getImportance() {
+    public int getImportance() {
         return importance;
     }
 
