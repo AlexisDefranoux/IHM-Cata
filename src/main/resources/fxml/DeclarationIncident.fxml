@@ -49,9 +49,9 @@
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="190.0" minWidth="10.0" prefWidth="185.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="0.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="448.0" minWidth="0.0" prefWidth="75.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="448.0" minWidth="0.0" prefWidth="31.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="448.0" minWidth="10.0" prefWidth="75.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="448.0" minWidth="0.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="448.0" minWidth="0.0" prefWidth="50.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="448.0" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="448.0" minWidth="10.0" prefWidth="166.0" />
         </columnConstraints>
         <rowConstraints>
@@ -64,7 +64,7 @@
                   <Insets right="10.0" />
                </GridPane.margin>
             </Label>
-            <ComboBox fx:id="idHeure" GridPane.columnIndex="2">
+            <ComboBox fx:id="idHeure" prefWidth="100.0" GridPane.columnIndex="2">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
@@ -74,7 +74,7 @@
                   <Insets left="10.0" />
                </GridPane.margin>
             </Label>
-            <ComboBox fx:id="idMin" prefWidth="150.0" GridPane.columnIndex="4">
+            <ComboBox fx:id="idMin" prefWidth="100.0" GridPane.columnIndex="4">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>

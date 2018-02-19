@@ -109,27 +109,29 @@ public class DeclarationIncidentController {
     }
 
     private void initCombobox(){
+        Date actuelle = new Date();
+        DateFormat minuteFormat = new SimpleDateFormat("m");
+        int min = Integer.parseInt(minuteFormat.format(actuelle));
+
         for(int i=0; i<24; i++){
             idHeure.getItems().add(i);
         }
         for(int i=0; i<60; i+=5){
             idMin.getItems().add(i);
+            if(min-i<5)
+               idMin.getSelectionModel().select(i/5);
         }
         for(Categorie c : Categorie.values()){
             idCategorie.getItems().add(c);
         }
-        Date actuelle = new Date();
+
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String dat = dateFormat.format(actuelle);
         idDate.getEditor().setText(dat);
 
         DateFormat heurFormat = new SimpleDateFormat("hh");
         String hour = heurFormat.format(actuelle);
-        idHeure.getEditor().setText(hour);
-
-        DateFormat minuteFormat = new SimpleDateFormat("mm");
-        String min = minuteFormat.format(actuelle);
-        idMin.getEditor().setText(min);
+        idHeure.getSelectionModel().select(Integer.parseInt(hour));
     }
 
 }
