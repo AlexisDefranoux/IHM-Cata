@@ -11,13 +11,13 @@
     -fx-text-fill: white;
     -fx-font-family: "Arial Narrow";
     -fx-font-weight: bold;
-    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-background-color: linear-gradient(#00adef, #094270);
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
 }
 
 .button:hover{
     -fx-cursor: hand;
-    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+    -fx-background-color: linear-gradient(#094270, #00adef);
 }
 
 /* Component specific styles */
@@ -27,13 +27,8 @@
     -fx-background-image: url("../images/background.jpg");
 }
 
-.hello-message {
-    -fx-text-fill: #AA0000;
-    -fx-font-weight: bold;
-    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
-}
-
 #titre{
+    -fx-text-fill: rgb(9,66,112);
     -fx-font-size: 28px;
     -fx-font-weight: normal;
 }
