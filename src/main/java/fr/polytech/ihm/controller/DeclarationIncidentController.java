@@ -17,6 +17,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,6 +61,9 @@ public class DeclarationIncidentController {
     private Slider idImportance;
 
     @FXML
+    private Text iderreur;
+
+    @FXML
     public void initialize(){
 
         initCombobox();
@@ -72,20 +76,20 @@ public class DeclarationIncidentController {
 
         idValider.setOnMouseClicked(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
-                String titre = idTitre.getText();
-                String description = idDescription.getText();
-                Categorie categorie = idCategorie.getSelectionModel().getSelectedItem();
-                String localisation = idLocalisation.getText();
-                Date date = new Date();
-                int importance = (int) idImportance.getValue();
-                String auteur = Session.getInstance().getEmail();
+                if(!idTitre.getText().isEmpty() && !idLocalisation.getText().isEmpty()){
+                    String titre = idTitre.getText();
+                    String description = idDescription.getText();
+                    Categorie categorie = idCategorie.getSelectionModel().getSelectedItem();
+                    String localisation = idLocalisation.getText();
+                    Date date = new Date();
+                    int importance = (int) idImportance.getValue();
+                    String auteur = Session.getInstance().getEmail();
 
-                if(!idTitre.getText().isEmpty()){
                     Incident incident = new Incident(titre, description, categorie, localisation, date, importance, auteur);
                     System.out.println(incident.toString());
                     backToHome(event,idValider);
                 }else{
-
+                    iderreur.setVisible(true);
                 }
             }
         });
@@ -110,7 +114,7 @@ public class DeclarationIncidentController {
 
     private void initCombobox(){
         Date actuelle = new Date();
-        DateFormat minuteFormat = new SimpleDateFormat("m");
+        DateFormat minuteFormat =  new SimpleDateFormat("m");
         int min = Integer.parseInt(minuteFormat.format(actuelle));
 
         for(int i=0; i<24; i++){
@@ -118,8 +122,8 @@ public class DeclarationIncidentController {
         }
         for(int i=0; i<60; i+=5){
             idMin.getItems().add(i);
-            if(min-i<5)
-               idMin.getSelectionModel().select(i/5);
+            if(min-i<5 && min-i>0)
+                idMin.setValue(i);
         }
         for(Categorie c : Categorie.values()){
             idCategorie.getItems().add(c);
@@ -129,9 +133,10 @@ public class DeclarationIncidentController {
         String dat = dateFormat.format(actuelle);
         idDate.getEditor().setText(dat);
 
-        DateFormat heurFormat = new SimpleDateFormat("hh");
+        DateFormat heurFormat = new SimpleDateFormat("H");
         String hour = heurFormat.format(actuelle);
-        idHeure.getSelectionModel().select(Integer.parseInt(hour));
+        System.out.println(hour);
+        idHeure.setValue(Integer.parseInt(hour));
     }
 
 }
