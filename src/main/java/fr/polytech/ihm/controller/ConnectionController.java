@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseButton;
@@ -33,7 +34,7 @@ public class ConnectionController {
 
         btnValider.setOnMouseClicked(new EventHandler<MouseEvent>() {
              public void handle(MouseEvent event) {
-                 if(!txtEmail.getText().isEmpty()){
+                 if(!txtEmail.getText().isEmpty() && !txtMdp.getText().isEmpty()){
                      Session.getInstance().setEmail(txtEmail.getText());
                      backToHome(event,btnValider);
                  }else{
@@ -51,6 +52,7 @@ public class ConnectionController {
                 Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
 
                 Scene scene = new Scene(rootNode);
+                scene.getStylesheets().add("/styles/styles.css");
                 stage.setScene(scene);
                 stage.show();
             } catch (IOException e) {

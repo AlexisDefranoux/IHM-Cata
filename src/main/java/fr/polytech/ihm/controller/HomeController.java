@@ -42,7 +42,7 @@ public class HomeController {
     private TableColumn<?, ?> clnDescription;
 
     @FXML
-    private TableColumn<?, ?> clnDate1;
+    private TableColumn<?, ?> Etat;
 
     @FXML
     private Button btnDeclarerIncident;
@@ -65,6 +65,7 @@ public class HomeController {
             try {
                 Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream("/fxml/declarationIncident.fxml"));
                 Scene scene = new Scene(rootNode);
+                scene.getStylesheets().add("/styles/styles.css");
                 Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 appStage.setScene(scene);
                 appStage.show();
@@ -78,6 +79,7 @@ public class HomeController {
             try {
                 Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream("/fxml/connexion.fxml"));
                 Scene scene = new Scene(rootNode);
+                scene.getStylesheets().add("/styles/styles.css");
                 Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 appStage.setScene(scene);
                 appStage.show();

@@ -99,6 +99,7 @@ public class DeclarationIncidentController {
                 Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
 
                 Scene scene = new Scene(rootNode);
+                scene.getStylesheets().add("/styles/styles.css");
                 stage.setScene(scene);
                 stage.show();
             } catch (IOException e) {
@@ -120,8 +121,15 @@ public class DeclarationIncidentController {
         Date actuelle = new Date();
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String dat = dateFormat.format(actuelle);
-        System.out.println("======================");
-        System.out.println(dat);
+        idDate.getEditor().setText(dat);
+
+        DateFormat heurFormat = new SimpleDateFormat("hh");
+        String hour = heurFormat.format(actuelle);
+        idHeure.getEditor().setText(hour);
+
+        DateFormat minuteFormat = new SimpleDateFormat("mm");
+        String min = minuteFormat.format(actuelle);
+        idMin.getEditor().setText(min);
     }
 
 }
