@@ -31,7 +31,7 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="23.0" prefWidth="897.0" text="Déclaration d'incident" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+      <Label id="titre"  alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="23.0" prefWidth="897.0" text="Déclaration d'incident" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>
@@ -96,8 +96,8 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="idAnnuler" mnemonicParsing="false" text="Annuler" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Button fx:id="idValider" mnemonicParsing="false" text="Valider" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Button fx:id="idAnnuler" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Annuler" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Button fx:id="idValider" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Valider" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
       <GridPane GridPane.columnIndex="2" GridPane.rowIndex="6">
