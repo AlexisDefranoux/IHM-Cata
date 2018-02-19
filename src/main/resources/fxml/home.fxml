@@ -50,6 +50,6 @@
       </Label>
       <CheckBox fx:id="mesIncidents" layoutX="279.0" layoutY="74.0" mnemonicParsing="false" text="Voir mes incidents" />
        <Text fx:id="login" layoutX="662.0" layoutY="24.0" text="dsfsdf" textAlignment="RIGHT" wrappingWidth="199.00000376999378" />
-       <Hyperlink fx:id="lienDeconnexion" layoutX="789.0" layoutY="28.0" prefHeight="23.0" prefWidth="99.0" text="Déconnexion" />
+       <Hyperlink fx:id="lienDeconnexion" layoutX="789.0" layoutY="28.0" prefHeight="23.0" prefWidth="99.0" text="Déconnexion" textAlignment="RIGHT" />
    </children>
 </AnchorPane>
