@@ -2,6 +2,8 @@ package fr.polytech.ihm.model;
 
 import fr.polytech.ihm.model.enums.Categorie;
 import fr.polytech.ihm.model.enums.Etat;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 import java.util.Date;
 import java.util.Objects;
@@ -14,7 +16,7 @@ public class Incident {
     private String localisation;
     private Date dateMishap;
     private Date dateDeclaration;
-    private boolean importance;
+    private Boolean importance;
     private String auteur;
     private Etat etat;
 
@@ -30,41 +32,42 @@ public class Incident {
         this.etat = Etat.declaration;
     }
 
-    public String getTitre() {
-        return titre;
+    public StringProperty getTitre() {
+        return new SimpleStringProperty(titre);
     }
 
-    public String getDescription() {
-        return description;
+    public StringProperty getDescription() {
+        return new SimpleStringProperty(description);
     }
 
-    public Categorie getCategorie() {
-        return categorie;
+    public StringProperty getCategorie() {
+        return new SimpleStringProperty(categorie.toString());
     }
 
-    public String getLocalisation() {
-        return localisation;
+    public StringProperty getLocalisation() {
+        return new SimpleStringProperty(localisation);
     }
 
-    public Date getDateMishap() {
-        return dateMishap;
+    public StringProperty getDateMishap() {
+        return new SimpleStringProperty(dateMishap.toString());
     }
 
-    public Date getDateDeclaration() {
-        return dateDeclaration;
+    public StringProperty getDateDeclaration() {
+        return new SimpleStringProperty(dateDeclaration.toString());
     }
 
-    public boolean getImportance() {
-        return importance;
+    public StringProperty getImportance() {
+        return new SimpleStringProperty(importance.toString());
     }
 
-    public String getAuteur() {
-        return auteur;
+    public StringProperty getAuteur() {
+        return new SimpleStringProperty(auteur);
     }
 
-    public Etat getEtat() {
-        return etat;
+    public StringProperty getEtat() {
+        return new SimpleStringProperty(etat.toString());
     }
+
     @Override
     public String toString() {
         return "Incident{" +

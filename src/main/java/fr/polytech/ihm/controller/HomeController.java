@@ -1,6 +1,10 @@
 package fr.polytech.ihm.controller;
 
+import fr.polytech.ihm.model.Incident;
+import fr.polytech.ihm.model.Incidents;
 import fr.polytech.ihm.model.Session;
+import fr.polytech.ihm.model.enums.Categorie;
+import fr.polytech.ihm.model.enums.Etat;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,32 +21,33 @@ import javafx.stage.Stage;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.util.Date;
 
 public class HomeController {
 
     @FXML
-    private TableView<?> table;
+    private TableView<Incident> table;
 
     @FXML
-    private TableColumn<?, ?> clnDate;
+    private TableColumn<Incident, String> clnDate;
 
     @FXML
-    private TableColumn<?, ?> clnImportance;
+    private TableColumn<Incident, String> clnImportance;
 
     @FXML
-    private TableColumn<?, ?> clnTitre;
+    private TableColumn<Incident, String> clnTitre;
 
     @FXML
-    private TableColumn<?, ?> clnCategorie;
+    private TableColumn<Incident, String> clnCategorie;
 
     @FXML
-    private TableColumn<?, ?> clnLieu;
+    private TableColumn<Incident, String> clnLieu;
 
     @FXML
-    private TableColumn<?, ?> clnDescription;
+    private TableColumn<Incident, String> clnDescription;
 
     @FXML
-    private TableColumn<?, ?> Etat;
+    private TableColumn<Incident, String> clnEtat;
 
     @FXML
     private Button btnDeclarerIncident;
@@ -57,6 +62,20 @@ public class HomeController {
     private Text login;
 
     public void initialize(){
+
+        System.out.println("TOOTO");
+
+        Incidents.getInstance().addMishap(new Incident("aitre", "descr", Categorie.MENAGE, "ma chambre", new Date(), false, "Moi"));
+
+        clnDate.setCellValueFactory(cellData -> cellData.getValue().getDateDeclaration());
+        clnImportance.setCellValueFactory(cellData -> cellData.getValue().getImportance());
+        clnTitre.setCellValueFactory(cellData -> cellData.getValue().getTitre());
+        clnCategorie.setCellValueFactory(cellData -> cellData.getValue().getImportance());
+        clnLieu.setCellValueFactory(cellData -> cellData.getValue().getLocalisation());
+        clnDescription.setCellValueFactory(cellData -> cellData.getValue().getDescription());
+        clnEtat.setCellValueFactory(cellData -> cellData.getValue().getEtat());
+        table.setItems(Incidents.getInstance().getMishaps());
+
         String temp = Session.getInstance().getEmail();
         login.setText(temp);
 
