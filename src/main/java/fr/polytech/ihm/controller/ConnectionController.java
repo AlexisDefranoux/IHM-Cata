@@ -1,5 +1,6 @@
 package fr.polytech.ihm.controller;
 
+import fr.polytech.ihm.Animation;
 import fr.polytech.ihm.model.Session;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -33,11 +34,26 @@ public class ConnectionController {
     public void initialize(){
 
         btnValider.setOnMouseClicked(new EventHandler<MouseEvent>() {
-             public void handle(MouseEvent event) {
+            public void handle(MouseEvent event) {
                  if(!txtEmail.getText().isEmpty() && !txtMdp.getText().isEmpty()){
                      Session.getInstance().setEmail(txtEmail.getText());
                      backToHome(event,btnValider);
                  }else{
+                     if(txtEmail.getText().isEmpty()){
+                         txtEmail.setStyle("-fx-border-color: red");
+                         Thread t = new Thread(new Animation(txtEmail));
+                         t.start();
+                     }else{
+                         txtEmail.setStyle("-fx-border-color: rgb(186,186,186)");
+                     }
+
+                     if(txtMdp.getText().isEmpty()){
+                         txtMdp.setStyle("-fx-border-color: red");
+                         Thread t = new Thread(new Animation(txtMdp));
+                         t.start();
+                     }else{
+                         txtMdp.setStyle("-fx-border-color: rgb(186,186,186)");
+                     }
                      ErreurLogin.setVisible(true);
                  }
              }

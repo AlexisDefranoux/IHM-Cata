@@ -104,6 +104,6 @@
       </GridPane>
       <CheckBox mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="6" />
       <Text fill="#111010" strokeType="OUTSIDE" strokeWidth="0.0" text="* Obligatoire" wrappingWidth="95.2490234375" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-      <Text fx:id="iderreur" fill="#f50505" strokeType="OUTSIDE" strokeWidth="0.0" text="Vous n'avez pas rempli correctement les champs" textAlignment="CENTER" visible="false" wrappingWidth="593.2490234375" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+      <Text fx:id="iderreur" fill="#f50505" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez remplir les champs en rouge" textAlignment="CENTER" visible="false" wrappingWidth="593.2490234375" GridPane.columnIndex="2" GridPane.rowIndex="7" />
    </children>
 </GridPane>

@@ -26,6 +26,7 @@
     -fx-background-image: url("../images/background.jpg");
 }
 
+
 #titre{
     -fx-text-fill: rgb(9,66,112);
     -fx-font-size: 28px;

@@ -26,7 +26,7 @@
       <TextField fx:id="txtEmail" layoutX="389.0" layoutY="277.0" prefHeight="25.0" prefWidth="213.0" />
       <Hyperlink layoutX="618.0" layoutY="426.0" text="Mot de passe oublié ?" />
       <Label id="titre" alignment="TOP_CENTER" layoutX="279.0" layoutY="10.0" text="Service de déclaration d'incidents" />
-      <Text fx:id="ErreurLogin" fill="#bf1313" layoutX="277.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email ou mot de passe incorrect. Réessayez ou cliquez sur &quot;Mot de passe oublié ?&quot;." visible="false" wrappingWidth="558.9999913275242" />
+      <Text fx:id="ErreurLogin" fill="#bf1313" layoutX="4.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez remplir les champs en rouge" textAlignment="CENTER" visible="false" wrappingWidth="892.9999913275242" />
       <PasswordField fx:id="txtMdp" layoutX="388.0" layoutY="320.0" prefHeight="25.0" prefWidth="213.0" />
       <Separator layoutX="-1.0" layoutY="58.0" prefHeight="2.0" prefWidth="903.0" />
    </children>

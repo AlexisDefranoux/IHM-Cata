@@ -1,5 +1,6 @@
 package fr.polytech.ihm.controller;
 
+import fr.polytech.ihm.Animation;
 import fr.polytech.ihm.model.Incident;
 import fr.polytech.ihm.model.Session;
 import fr.polytech.ihm.model.enums.Categorie;
@@ -82,13 +83,28 @@ public class DeclarationIncidentController {
                     Categorie categorie = idCategorie.getSelectionModel().getSelectedItem();
                     String localisation = idLocalisation.getText();
                     Date date = new Date();
-                    int importance = (int) idImportance.getValue();
+                    int importance = 1;//(int) idImportance.getValue();
                     String auteur = Session.getInstance().getEmail();
 
                     Incident incident = new Incident(titre, description, categorie, localisation, date, importance, auteur);
                     System.out.println(incident.toString());
                     backToHome(event,idValider);
                 }else{
+                    if(idTitre.getText().isEmpty()){
+                        idTitre.setStyle("-fx-border-color: red");
+                        Thread t = new Thread(new Animation(idTitre));
+                        t.start();
+                    }else{
+                        idTitre.setStyle("-fx-border-color: rgb(186,186,186)");
+                    }
+
+                    if(idLocalisation.getText().isEmpty()){
+                        idLocalisation.setStyle("-fx-border-color: red");
+                        Thread t = new Thread(new Animation(idLocalisation));
+                        t.start();
+                    }else{
+                        idLocalisation.setStyle("-fx-border-color: rgb(186,186,186)");
+                    }
                     iderreur.setVisible(true);
                 }
             }
@@ -122,7 +138,7 @@ public class DeclarationIncidentController {
         }
         for(int i=0; i<60; i+=5){
             idMin.getItems().add(i);
-            if(min-i<5 && min-i>0)
+            if(min-i<5 && min-i>=0)
                 idMin.setValue(i);
         }
         for(Categorie c : Categorie.values()){
