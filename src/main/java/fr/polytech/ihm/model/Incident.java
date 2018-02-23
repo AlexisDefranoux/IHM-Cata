@@ -68,7 +68,14 @@ public class Incident {
     public StringProperty getDateDeclaration() {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String dat = dateFormat.format(dateDeclaration);
-        return new SimpleStringProperty(dat);
+
+        DateFormat minuteFormat = new SimpleDateFormat("m");
+        String m =(Integer.parseInt( minuteFormat.format(dateDeclaration))<10) ? "0"+ minuteFormat.format(dateDeclaration):minuteFormat.format(dateDeclaration);
+
+        DateFormat heureFormat = new SimpleDateFormat("h");
+        String h = (Integer.parseInt(heureFormat.format(dateDeclaration))<10) ? "0"+heureFormat.format(dateDeclaration):heureFormat.format(dateDeclaration);
+
+        return new SimpleStringProperty(dat+"-"+h+":"+m);
     }
 
     public StringProperty getImportance() {
