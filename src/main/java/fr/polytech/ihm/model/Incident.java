@@ -44,11 +44,17 @@ public class Incident {
 
 
     public StringProperty getDescription() {
-        return new SimpleStringProperty(description);
+        if(description == null)
+            return new SimpleStringProperty("");
+        else
+            return new SimpleStringProperty(description);
     }
 
     public StringProperty getCategorie() {
-        return new SimpleStringProperty(categorie.toString());
+        if(categorie == null)
+            return new SimpleStringProperty("");
+        else
+            return new SimpleStringProperty(categorie.toString());
     }
 
     public StringProperty getLocalisation() {
