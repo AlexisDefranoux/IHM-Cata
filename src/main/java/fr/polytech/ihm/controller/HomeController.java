@@ -68,6 +68,9 @@ public class HomeController {
     @FXML
     private CheckBox mesIncidents;
 
+    @FXML
+    private ComboBox<String> comboCol;
+
     public void initialize(){
 
         clnDate.setCellValueFactory(cellData -> cellData.getValue().getDateDeclaration());
