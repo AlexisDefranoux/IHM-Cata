@@ -70,7 +70,7 @@ public class HomeController {
         clnDate.setCellValueFactory(cellData -> cellData.getValue().getDateDeclaration());
         clnImportance.setCellValueFactory(cellData -> cellData.getValue().getImportance());
         clnTitre.setCellValueFactory(cellData -> cellData.getValue().getTitre());
-        clnCategorie.setCellValueFactory(cellData -> cellData.getValue().getImportance());
+        clnCategorie.setCellValueFactory(cellData -> cellData.getValue().getCategorie());
         clnLieu.setCellValueFactory(cellData -> cellData.getValue().getLocalisation());
         clnDescription.setCellValueFactory(cellData -> cellData.getValue().getDescription());
         clnEtat.setCellValueFactory(cellData -> cellData.getValue().getEtat());

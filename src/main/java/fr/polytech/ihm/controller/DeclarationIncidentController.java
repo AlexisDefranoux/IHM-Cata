@@ -73,6 +73,8 @@ public class DeclarationIncidentController {
         idValider.setOnMouseClicked(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
                 if(!idTitre.getText().isEmpty() && !idLocalisation.getText().isEmpty()){
+
+
                     String titre = idTitre.getText();
                     String description = idDescription.getText();
                     Categorie categorie = idCategorie.getSelectionModel().getSelectedItem();
@@ -85,18 +87,18 @@ public class DeclarationIncidentController {
                     System.out.println(incident.toString());
                     backToHome(event,idValider);
                 }else{
+                    Thread titreThread = new Thread(new Animation(idTitre));
+                    Thread localisationThread = new Thread(new Animation(idLocalisation));
                     if(idTitre.getText().isEmpty()){
                         idTitre.setStyle("-fx-border-color: red");
-                        Thread t = new Thread(new Animation(idTitre));
-                        t.start();
+                        titreThread.start();
                     }else{
                         idTitre.setStyle("-fx-border-color: rgb(186,186,186)");
                     }
 
                     if(idLocalisation.getText().isEmpty()){
                         idLocalisation.setStyle("-fx-border-color: red");
-                        Thread t = new Thread(new Animation(idLocalisation));
-                        t.start();
+                        localisationThread.start();
                     }else{
                         idLocalisation.setStyle("-fx-border-color: rgb(186,186,186)");
                     }
