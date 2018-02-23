@@ -23,6 +23,9 @@ import java.util.Date;
 
 public class HomeController {
 
+    private String recherche = "";
+    private boolean mesIncident = false;
+
     @FXML
     private TableView<Incident> table;
 
@@ -108,11 +111,10 @@ public class HomeController {
         });
 
         btnRechercher.setOnMouseClicked(event -> {
-           String recherche = inputRecherche.getText();
-           Incidents.getInstance().getIncidentsAfficher().clear();
-           for(Incident incident : Incidents.getInstance().getIncidentsAll()){
-                if(incident.getTitreString().contains(recherche)){
-                    Incidents.getInstance().getIncidentsAfficher().add(incident);
+           recherche = inputRecherche.getText();
+           for(Incident incident : Incidents.getInstance().getIncidentsAfficher()){
+                if(!incident.getTitreString().contains(recherche)){
+                    Incidents.getInstance().getIncidentsAfficher().remove(incident);
                 }
            }
         });
@@ -121,26 +123,27 @@ public class HomeController {
             @Override
             public void changed(ObservableValue<? extends String> observable,
                                 String oldValue, String newValue) {
-
-                if(inputRecherche.getText().isEmpty()){
-                    Incidents.getInstance().getIncidentsAfficher().clear();
+                recherche = inputRecherche.getText();
+                if(recherche.isEmpty()){
                     for(Incident incident : Incidents.getInstance().getIncidentsAll()){
+                        if(!mesIncident || incident.getAuteur().equals(Session.getInstance().getEmail()))
                         Incidents.getInstance().getIncidentsAfficher().add(incident);
                     }
                 }
             }
         });
         mesIncidents.setOnMouseClicked(event ->{
-            Incidents.getInstance().getIncidentsAfficher().clear();
-            if(mesIncidents.isSelected()){
-                for(Incident incident : Incidents.getInstance().getIncidentsAll()){
-                    if(incident.getAuteur().contains(Session.getInstance().getEmail())){
-                        Incidents.getInstance().getIncidentsAfficher().add(incident);
+            mesIncident = mesIncidents.isSelected();
+            if(mesIncident){
+                for(Incident incident : Incidents.getInstance().getIncidentsAfficher()){
+                    if(!incident.getAuteur().equals(Session.getInstance().getEmail())){
+                        Incidents.getInstance().getIncidentsAfficher().remove(incident);
                     }
                 }
             }else{
                 for(Incident incident : Incidents.getInstance().getIncidentsAll()){
-                    Incidents.getInstance().getIncidentsAfficher().add(incident);
+                    if(recherche.isEmpty() || incident.getTitreString().contains(recherche))
+                        Incidents.getInstance().getIncidentsAfficher().add(incident);
                 }
             }
         });
