@@ -22,7 +22,7 @@ public class Incident {
     private String auteur;
     private Etat etat;
 
-    public Incident(String titre, String description, Categorie categorie, String localisation, Date dateDeclaration, boolean importance, String auteur) {
+    public Incident(String titre, String description, Categorie categorie, String localisation, Date dateDeclaration, boolean importance, String auteur, Etat etat) {
         this.titre = titre;
         this.description = description;
         this.categorie = categorie;
@@ -31,7 +31,7 @@ public class Incident {
         this.dateDeclaration = dateDeclaration;
         this.importance = importance;
         this.auteur = auteur;
-        this.etat = Etat.NONTRAITE;
+        this.etat = etat;
         Incidents.getInstance().addIncident(this);
     }
 
@@ -62,7 +62,10 @@ public class Incident {
     }
 
     public StringProperty getImportance() {
-        return new SimpleStringProperty(importance.toString());
+        if(importance)
+            return new SimpleStringProperty("Urgent");
+        else
+            return new SimpleStringProperty("Aucune");
     }
 
     public StringProperty getAuteur() {
