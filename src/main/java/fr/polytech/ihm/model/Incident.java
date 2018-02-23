@@ -14,11 +14,11 @@ public class Incident {
     private String localisation;
     private Date dateMishap;
     private Date dateDeclaration;
-    private int importance;
+    private boolean importance;
     private String auteur;
     private Etat etat;
 
-    public Incident(String titre, String description, Categorie categorie, String localisation, Date dateDeclaration, int importance, String auteur) {
+    public Incident(String titre, String description, Categorie categorie, String localisation, Date dateDeclaration, boolean importance, String auteur) {
         this.titre = titre;
         this.description = description;
         this.categorie = categorie;
@@ -54,7 +54,7 @@ public class Incident {
         return dateDeclaration;
     }
 
-    public int getImportance() {
+    public boolean getImportance() {
         return importance;
     }
 

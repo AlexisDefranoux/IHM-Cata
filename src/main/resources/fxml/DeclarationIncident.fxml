@@ -102,7 +102,7 @@
             <Button fx:id="idValider" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Valider" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
-      <CheckBox mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <CheckBox fx:id="idUrgence" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="6" />
       <Text fill="#111010" strokeType="OUTSIDE" strokeWidth="0.0" text="* Obligatoire" wrappingWidth="95.2490234375" GridPane.columnIndex="1" GridPane.rowIndex="7" />
       <Text fx:id="iderreur" fill="#f50505" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez remplir les champs en rouge" textAlignment="CENTER" visible="false" wrappingWidth="593.2490234375" GridPane.columnIndex="2" GridPane.rowIndex="7" />
    </children>

@@ -10,12 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
@@ -59,7 +54,7 @@ public class DeclarationIncidentController {
     private Button idValider;
 
     @FXML
-    private Slider idImportance;
+    private CheckBox idUrgence;
 
     @FXML
     private Text iderreur;
@@ -83,7 +78,7 @@ public class DeclarationIncidentController {
                     Categorie categorie = idCategorie.getSelectionModel().getSelectedItem();
                     String localisation = idLocalisation.getText();
                     Date date = new Date();
-                    int importance = 1;//(int) idImportance.getValue();
+                    boolean importance = idUrgence.isSelected();
                     String auteur = Session.getInstance().getEmail();
 
                     Incident incident = new Incident(titre, description, categorie, localisation, date, importance, auteur);
