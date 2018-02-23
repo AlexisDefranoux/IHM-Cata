@@ -95,12 +95,15 @@ public class DeclarationIncidentController {
                         titreThread.start();
                     }else{
                         idTitre.setStyle("-fx-border-color: rgb(186,186,186)");
+                        if(idLocalisation.getText().isEmpty()){
+                            idLocalisation.setStyle("-fx-border-color: red");
+                            localisationThread.start();
+                        }else{
+                            idLocalisation.setStyle("-fx-border-color: rgb(186,186,186)");
+                        }
                     }
 
-                    if(idLocalisation.getText().isEmpty()){
-                        idLocalisation.setStyle("-fx-border-color: red");
-                        localisationThread.start();
-                    }else{
+                    if(!idLocalisation.getText().isEmpty()){
                         idLocalisation.setStyle("-fx-border-color: rgb(186,186,186)");
                     }
                     iderreur.setVisible(true);

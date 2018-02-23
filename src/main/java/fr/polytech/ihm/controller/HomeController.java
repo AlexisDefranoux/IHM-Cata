@@ -112,11 +112,7 @@ public class HomeController {
 
         btnRechercher.setOnMouseClicked(event -> {
            recherche = inputRecherche.getText();
-           for(Incident incident : Incidents.getInstance().getIncidentsAfficher()){
-                if(!incident.getTitreString().contains(recherche)){
-                    Incidents.getInstance().getIncidentsAfficher().remove(incident);
-                }
-           }
+           Incidents.getInstance().getIncidentsAfficher().removeIf( incident -> !incident.getTitreString().toUpperCase().contains(recherche.toUpperCase()));
         });
 
         inputRecherche.textProperty().addListener(new ChangeListener<String>() {
@@ -126,8 +122,8 @@ public class HomeController {
                 recherche = inputRecherche.getText();
                 if(recherche.isEmpty()){
                     for(Incident incident : Incidents.getInstance().getIncidentsAll()){
-                        if(!mesIncident || incident.getAuteur().equals(Session.getInstance().getEmail()))
-                        Incidents.getInstance().getIncidentsAfficher().add(incident);
+                        if((!mesIncident || incident.getAuteur().equals(Session.getInstance().getEmail())) && !Incidents.getInstance().getIncidentsAfficher().contains(incident))
+                            Incidents.getInstance().getIncidentsAfficher().add(incident);
                     }
                 }
             }
@@ -135,14 +131,10 @@ public class HomeController {
         mesIncidents.setOnMouseClicked(event ->{
             mesIncident = mesIncidents.isSelected();
             if(mesIncident){
-                for(Incident incident : Incidents.getInstance().getIncidentsAfficher()){
-                    if(!incident.getAuteur().equals(Session.getInstance().getEmail())){
-                        Incidents.getInstance().getIncidentsAfficher().remove(incident);
-                    }
-                }
+                Incidents.getInstance().getIncidentsAfficher().removeIf( incident -> !incident.getAuteur().equals(Session.getInstance().getEmail()));
             }else{
                 for(Incident incident : Incidents.getInstance().getIncidentsAll()){
-                    if(recherche.isEmpty() || incident.getTitreString().contains(recherche))
+                    if((recherche.isEmpty() || incident.getTitreString().toUpperCase().contains(recherche.toUpperCase())) && !Incidents.getInstance().getIncidentsAfficher().contains(incident))
                         Incidents.getInstance().getIncidentsAfficher().add(incident);
                 }
             }
