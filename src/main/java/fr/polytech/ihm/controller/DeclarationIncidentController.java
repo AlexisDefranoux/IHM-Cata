@@ -84,8 +84,7 @@ public class DeclarationIncidentController {
                     boolean importance = idUrgence.isSelected();
                     String auteur = Session.getInstance().getEmail();
 
-                    Incident incident = new Incident(titre, description, categorie, localisation, date, importance, auteur);
-
+                    Incident incident = new Incident(titre, description, categorie, localisation, date, importance, auteur, Etat.NONTRAITE);
 
                     backToHome(event,idValider);
                 }else{

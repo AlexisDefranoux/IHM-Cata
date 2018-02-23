@@ -17,7 +17,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.controller.HomeController">
    <children>
-      <TableView fx:id="table" layoutY="108.0" prefHeight="492.0" prefWidth="900.0" AnchorPane.leftAnchor="0.0">
+      <TableView fx:id="table" layoutY="108.0" prefHeight="492.0" prefWidth="900.0" tableMenuButtonVisible="true" AnchorPane.leftAnchor="0.0">
         <columns>
           <TableColumn fx:id="clnDate" prefWidth="103.66666412353516" text="Date" />
           <TableColumn fx:id="clnImportance" minWidth="0.0" prefWidth="124.66667175292969" text="Importance" />
@@ -27,12 +27,12 @@
             <TableColumn fx:id="clnDescription" prefWidth="252.66668701171875" text="Description" />
             <TableColumn fx:id="clnEtat" prefWidth="103.66666412353516" text="Etat" />
         </columns>
-         <columnResizePolicy>
-            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-         </columnResizePolicy>
          <padding>
             <Insets bottom="10.0" />
          </padding>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
       </TableView>
       <Button fx:id="btnDeclarerIncident" accessibleRole="IMAGE_VIEW" layoutX="699.0" layoutY="65.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="187.0" text="Déclarer un incident" />
       <TextField fx:id="inputRecherche" layoutX="14.0" layoutY="69.0" prefHeight="25.0" prefWidth="145.0" />
