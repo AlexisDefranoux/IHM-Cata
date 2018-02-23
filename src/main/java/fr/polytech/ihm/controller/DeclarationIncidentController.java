@@ -61,6 +61,8 @@ public class DeclarationIncidentController {
     private Text iderreur;
 
     @FXML
+    private CheckBox idRedeclarer;
+
     public void initialize(){
 
         initCombobox();
@@ -85,8 +87,24 @@ public class DeclarationIncidentController {
                     String auteur = Session.getInstance().getEmail();
 
                     Incident incident = new Incident(titre, description, categorie, localisation, date, importance, auteur, Etat.NONTRAITE);
+                    if(idRedeclarer.isSelected()){
+                        if (event.getButton() == MouseButton.PRIMARY) {
+                            String fxmlFile = "/fxml/DeclarationIncident.fxml";
+                            FXMLLoader loader = new FXMLLoader();
+                            try {
+                                Stage stage = (Stage) idValider.getScene().getWindow();
+                                Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
 
-                    backToHome(event,idValider);
+                                Scene scene = new Scene(rootNode);
+                                scene.getStylesheets().add("/styles/styles.css");
+                                stage.setScene(scene);
+                                stage.show();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }else
+                        backToHome(event,idValider);
                 }else{
                     Thread titreThread = new Thread(new Animation(idTitre));
                     Thread localisationThread = new Thread(new Animation(idLocalisation));

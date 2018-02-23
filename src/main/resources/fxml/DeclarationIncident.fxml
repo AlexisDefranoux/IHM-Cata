@@ -89,7 +89,7 @@
          </children>
       </GridPane>
       <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="Urgent" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
-      <GridPane GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="8">
+      <GridPane GridPane.columnSpan="4" GridPane.rowIndex="8">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -100,10 +100,11 @@
          <children>
             <Button fx:id="idAnnuler" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Annuler" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
             <Button fx:id="idValider" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Valider" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <CheckBox fx:id="idRedeclarer" mnemonicParsing="false" text="Redéclarer incident" GridPane.columnIndex="1" />
          </children>
       </GridPane>
       <CheckBox fx:id="idUrgence" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-      <Text fill="#111010" strokeType="OUTSIDE" strokeWidth="0.0" text="* Obligatoire" wrappingWidth="95.2490234375" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+      <Text fill="#111010" strokeType="OUTSIDE" strokeWidth="0.0" text="* Champ Obligatoire" wrappingWidth="147.2490234375" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7" />
       <Text fx:id="iderreur" fill="#f50505" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez remplir les champs en rouge" textAlignment="CENTER" visible="false" wrappingWidth="593.2490234375" GridPane.columnIndex="2" GridPane.rowIndex="7" />
    </children>
 </GridPane>

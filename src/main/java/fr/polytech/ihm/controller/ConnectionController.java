@@ -45,15 +45,18 @@ public class ConnectionController {
                          t.start();
                      }else{
                          txtEmail.setStyle("-fx-border-color: rgb(186,186,186)");
+                         if(txtMdp.getText().isEmpty()){
+                             txtMdp.setStyle("-fx-border-color: red");
+                             Thread t = new Thread(new Animation(txtMdp));
+                             t.start();
+                         }else{
+                             txtMdp.setStyle("-fx-border-color: rgb(186,186,186)");
+                         }
                      }
 
-                     if(txtMdp.getText().isEmpty()){
-                         txtMdp.setStyle("-fx-border-color: red");
-                         Thread t = new Thread(new Animation(txtMdp));
-                         t.start();
-                     }else{
+                     if(!txtMdp.getText().isEmpty())
                          txtMdp.setStyle("-fx-border-color: rgb(186,186,186)");
-                     }
+
                      ErreurLogin.setVisible(true);
                  }
              }
