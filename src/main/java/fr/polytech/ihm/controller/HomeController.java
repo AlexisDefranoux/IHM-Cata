@@ -4,6 +4,8 @@ import fr.polytech.ihm.model.Incident;
 import fr.polytech.ihm.model.Incidents;
 import fr.polytech.ihm.model.Session;
 import fr.polytech.ihm.model.enums.Categorie;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -115,7 +117,19 @@ public class HomeController {
            }
         });
 
+        inputRecherche.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable,
+                                String oldValue, String newValue) {
 
+                if(inputRecherche.getText().isEmpty()){
+                    Incidents.getInstance().getIncidentsAfficher().clear();
+                    for(Incident incident : Incidents.getInstance().getIncidentsAll()){
+                        Incidents.getInstance().getIncidentsAfficher().add(incident);
+                    }
+                }
+            }
+        });
         mesIncidents.setOnMouseClicked(event ->{
             Incidents.getInstance().getIncidentsAfficher().clear();
             if(mesIncidents.isSelected()){
