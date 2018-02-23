@@ -38,6 +38,10 @@ public class Incident {
     public StringProperty getTitre() {
         return new SimpleStringProperty(titre);
     }
+    public String getTitreString() {
+        return titre;
+    }
+
 
     public StringProperty getDescription() {
         return new SimpleStringProperty(description);
@@ -65,8 +69,8 @@ public class Incident {
         return new SimpleStringProperty(importance.toString());
     }
 
-    public StringProperty getAuteur() {
-        return new SimpleStringProperty(auteur);
+    public String getAuteur() {
+        return auteur;
     }
 
     public StringProperty getEtat() {

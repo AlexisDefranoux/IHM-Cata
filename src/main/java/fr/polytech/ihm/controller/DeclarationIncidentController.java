@@ -2,6 +2,7 @@ package fr.polytech.ihm.controller;
 
 import fr.polytech.ihm.Animation;
 import fr.polytech.ihm.model.Incident;
+import fr.polytech.ihm.model.Incidents;
 import fr.polytech.ihm.model.Session;
 import fr.polytech.ihm.model.enums.Categorie;
 import fr.polytech.ihm.model.enums.Etat;
@@ -84,7 +85,8 @@ public class DeclarationIncidentController {
                     String auteur = Session.getInstance().getEmail();
 
                     Incident incident = new Incident(titre, description, categorie, localisation, date, importance, auteur);
-                    System.out.println(incident.toString());
+
+
                     backToHome(event,idValider);
                 }else{
                     Thread titreThread = new Thread(new Animation(idTitre));

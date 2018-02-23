@@ -4,18 +4,18 @@ import fr.polytech.ihm.model.Incident;
 import fr.polytech.ihm.model.Incidents;
 import fr.polytech.ihm.model.Session;
 import fr.polytech.ihm.model.enums.Categorie;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.io.IOException;
 import java.util.Date;
 
@@ -49,6 +49,9 @@ public class HomeController {
     private Button btnDeclarerIncident;
 
     @FXML
+    private TextField inputRecherche;
+
+    @FXML
     private Button btnRechercher;
 
     @FXML
@@ -56,6 +59,9 @@ public class HomeController {
 
     @FXML
     private Text login;
+
+    @FXML
+    private CheckBox mesIncidents;
 
     public void initialize(){
 
@@ -66,7 +72,7 @@ public class HomeController {
         clnLieu.setCellValueFactory(cellData -> cellData.getValue().getLocalisation());
         clnDescription.setCellValueFactory(cellData -> cellData.getValue().getDescription());
         clnEtat.setCellValueFactory(cellData -> cellData.getValue().getEtat());
-        table.setItems(Incidents.getInstance().getIncidents());
+        table.setItems(Incidents.getInstance().getIncidentsAfficher());
 
         String temp = Session.getInstance().getEmail();
         login.setText(temp);
@@ -98,6 +104,35 @@ public class HomeController {
                 e.printStackTrace();
             }
         });
+
+        btnRechercher.setOnMouseClicked(event -> {
+           String recherche = inputRecherche.getText();
+           Incidents.getInstance().getIncidentsAfficher().clear();
+           for(Incident incident : Incidents.getInstance().getIncidentsAll()){
+                if(incident.getTitreString().contains(recherche)){
+                    Incidents.getInstance().getIncidentsAfficher().add(incident);
+                }
+           }
+        });
+
+
+        mesIncidents.setOnMouseClicked(event ->{
+            Incidents.getInstance().getIncidentsAfficher().clear();
+            if(mesIncidents.isSelected()){
+                for(Incident incident : Incidents.getInstance().getIncidentsAll()){
+                    if(incident.getAuteur().contains(Session.getInstance().getEmail())){
+                        Incidents.getInstance().getIncidentsAfficher().add(incident);
+                    }
+                }
+            }else{
+                for(Incident incident : Incidents.getInstance().getIncidentsAll()){
+                    Incidents.getInstance().getIncidentsAfficher().add(incident);
+                }
+            }
+        });
+
+
+
     }
 
 }

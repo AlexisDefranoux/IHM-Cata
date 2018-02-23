@@ -3,21 +3,35 @@ package fr.polytech.ihm.model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Incidents {
 
 	private static Incidents instance = new Incidents();
-	private ObservableList<Incident> incidents;
+	private ObservableList<Incident> incidentsAfficher;
+	private ArrayList<Incident> incidentsAll;
 
 	private Incidents(){
-		incidents = FXCollections.observableArrayList();
+		incidentsAfficher = FXCollections.observableArrayList();
+		incidentsAll = new ArrayList<>();
 	}
 
 	public void addIncident(Incident incident) {
-		incidents.add(incident);
+		incidentsAfficher.add(incident);
+		incidentsAll.add(incident);
 	}
 
-	public ObservableList<Incident> getIncidents() {
-		return incidents;
+	public ObservableList<Incident> getIncidentsAfficher() {
+		return incidentsAfficher;
+	}
+
+	public void setIncidentsAfficher(ObservableList<Incident> incidentsAfficher) {
+		this.incidentsAfficher = incidentsAfficher;
+	}
+
+	public ArrayList<Incident> getIncidentsAll() {
+		return incidentsAll;
 	}
 
 	public static Incidents getInstance(){
