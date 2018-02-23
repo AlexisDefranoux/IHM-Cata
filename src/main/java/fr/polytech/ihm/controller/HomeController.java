@@ -59,10 +59,6 @@ public class HomeController {
 
     public void initialize(){
 
-        System.out.println("TOOTO");
-
-        Incidents.getInstance().addIncident(new Incident("aitre", "descr", Categorie.MENAGE, "ma chambre", new Date(), false, "Moi"));
-
         clnDate.setCellValueFactory(cellData -> cellData.getValue().getDateDeclaration());
         clnImportance.setCellValueFactory(cellData -> cellData.getValue().getImportance());
         clnTitre.setCellValueFactory(cellData -> cellData.getValue().getTitre());

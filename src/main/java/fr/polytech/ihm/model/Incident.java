@@ -32,6 +32,7 @@ public class Incident {
         this.importance = importance;
         this.auteur = auteur;
         this.etat = Etat.NONTRAITE;
+        Incidents.getInstance().addIncident(this);
     }
 
     public StringProperty getTitre() {

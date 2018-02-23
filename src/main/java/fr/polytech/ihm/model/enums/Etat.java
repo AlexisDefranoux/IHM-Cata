@@ -1,7 +1,7 @@
 package fr.polytech.ihm.model.enums;
 
 public enum Etat {
-    NONTRAITE("Non traiter"), ENCOURS("En cours"), TERMINER("Terminer");
+    NONTRAITE("Non traité"), ENCOURS("En cours"), TERMINER("Terminé");
 
     private String name;
 

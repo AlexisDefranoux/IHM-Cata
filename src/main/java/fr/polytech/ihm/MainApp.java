@@ -1,5 +1,8 @@
 package fr.polytech.ihm;
 
+import fr.polytech.ihm.model.Incident;
+import fr.polytech.ihm.model.Incidents;
+import fr.polytech.ihm.model.enums.Categorie;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,6 +10,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Date;
 
 public class MainApp extends Application {
 
@@ -17,6 +22,10 @@ public class MainApp extends Application {
     }
 
     public void start(Stage stage) throws Exception {
+        new Incident("aitre", "descr", Categorie.MENAGE, "ma chambre", new Date(), false, "Moi");
+        new Incident("titre2", "descr", Categorie.MENAGE, "ma chambre", new Date(), false, "Moi");
+        new Incident("titre3", "descr", Categorie.MENAGE, "ma chambre", new Date(), false, "Moi");
+        new Incident("aitrsqdsqe", "deqsdscr", Categorie.MENAGE, "ma chambrdqssqde", new Date(), false, "Mosdqdqsi");
 
         log.info("Starting Hello JavaFX and Maven demonstration application");
 
