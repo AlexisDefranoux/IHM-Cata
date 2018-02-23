@@ -4,8 +4,6 @@ import fr.polytech.ihm.model.Incident;
 import fr.polytech.ihm.model.Incidents;
 import fr.polytech.ihm.model.Session;
 import fr.polytech.ihm.model.enums.Categorie;
-import fr.polytech.ihm.model.enums.Etat;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -18,8 +16,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.awt.*;
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.Date;
 
@@ -65,7 +61,7 @@ public class HomeController {
 
         System.out.println("TOOTO");
 
-        Incidents.getInstance().addMishap(new Incident("aitre", "descr", Categorie.MENAGE, "ma chambre", new Date(), false, "Moi"));
+        Incidents.getInstance().addIncident(new Incident("aitre", "descr", Categorie.MENAGE, "ma chambre", new Date(), false, "Moi"));
 
         clnDate.setCellValueFactory(cellData -> cellData.getValue().getDateDeclaration());
         clnImportance.setCellValueFactory(cellData -> cellData.getValue().getImportance());
@@ -74,7 +70,7 @@ public class HomeController {
         clnLieu.setCellValueFactory(cellData -> cellData.getValue().getLocalisation());
         clnDescription.setCellValueFactory(cellData -> cellData.getValue().getDescription());
         clnEtat.setCellValueFactory(cellData -> cellData.getValue().getEtat());
-        table.setItems(Incidents.getInstance().getMishaps());
+        table.setItems(Incidents.getInstance().getIncidents());
 
         String temp = Session.getInstance().getEmail();
         login.setText(temp);

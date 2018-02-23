@@ -31,7 +31,7 @@ public class Incident {
         this.dateDeclaration = dateDeclaration;
         this.importance = importance;
         this.auteur = auteur;
-        this.etat = Etat.declaration;
+        this.etat = Etat.NONTRAITE;
     }
 
     public StringProperty getTitre() {

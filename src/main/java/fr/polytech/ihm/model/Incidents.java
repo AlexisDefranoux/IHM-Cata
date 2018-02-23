@@ -6,26 +6,18 @@ import javafx.collections.ObservableList;
 public class Incidents {
 
 	private static Incidents instance = new Incidents();
-	private ObservableList<Incident> mishaps;
-	//private FilteredList<Incident> mishapFilteredList;
-
+	private ObservableList<Incident> incidents;
 
 	private Incidents(){
-		mishaps = FXCollections.observableArrayList();
-		//mishapFilteredList = new FilteredList<>(mishaps);
+		incidents = FXCollections.observableArrayList();
 	}
 
-//	public FilteredList<Incident> getMishapFilteredList() {
-//		return mishapFilteredList;
-//	}
-
-	public void addMishap(Incident mishap) {
-		mishaps.add(mishap);
+	public void addIncident(Incident incident) {
+		incidents.add(incident);
 	}
 
-
-	public ObservableList<Incident> getMishaps() {
-		return mishaps;
+	public ObservableList<Incident> getIncidents() {
+		return incidents;
 	}
 
 	public static Incidents getInstance(){
