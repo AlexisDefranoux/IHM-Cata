@@ -56,6 +56,9 @@ public class Incident {
         else
             return new SimpleStringProperty(categorie.toString());
     }
+    public String getCategorieString(){
+        return categorie.toString();
+    }
 
     public StringProperty getLocalisation() {
         return new SimpleStringProperty(localisation);

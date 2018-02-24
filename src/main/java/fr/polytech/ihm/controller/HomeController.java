@@ -4,6 +4,7 @@ import fr.polytech.ihm.model.Incident;
 import fr.polytech.ihm.model.Incidents;
 import fr.polytech.ihm.model.Session;
 import fr.polytech.ihm.model.enums.Categorie;
+import fr.polytech.ihm.model.enums.Colone;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -73,6 +74,11 @@ public class HomeController {
 
     public void initialize(){
 
+        for(Colone colone : Colone.values()){
+            comboCol.getItems().add(colone.getName());
+        }
+        comboCol.setValue("Titre");
+
         clnDate.setCellValueFactory(cellData -> cellData.getValue().getDateDeclaration());
         clnImportance.setCellValueFactory(cellData -> cellData.getValue().getImportance());
         clnTitre.setCellValueFactory(cellData -> cellData.getValue().getTitre());
@@ -115,7 +121,10 @@ public class HomeController {
 
         btnRechercher.setOnMouseClicked(event -> {
            recherche = inputRecherche.getText();
-           Incidents.getInstance().getIncidentsAfficher().removeIf( incident -> !incident.getTitreString().toUpperCase().contains(recherche.toUpperCase()));
+           Incidents.getInstance().getIncidentsAfficher().clear();
+           Incidents.getInstance().getIncidentsAll().stream().filter(incident ->
+                   recherche(incident) && (!mesIncident || incident.getAuteur().equals(Session.getInstance().getEmail()))
+           ).forEach(incident ->  Incidents.getInstance().getIncidentsAfficher().add(incident));
         });
 
         inputRecherche.textProperty().addListener(new ChangeListener<String>() {
@@ -143,6 +152,21 @@ public class HomeController {
             }
         });
 
+    }
+    private boolean recherche(Incident incident){
+
+        switch (comboCol.getSelectionModel().getSelectedItem()){
+            case "Titre":
+                return incident.getTitreString().toUpperCase().contains(recherche.toUpperCase());
+            case "Catégorie":
+                return incident.getCategorieString().toUpperCase().contains(recherche.toUpperCase());
+            case "Lieu":
+                return incident.getLocalisation().toString().toUpperCase().contains(recherche.toUpperCase());
+            case "Description":
+                return incident.getDescription().toString().toUpperCase().contains(recherche.toUpperCase());
+            default:
+                return incident.getTitreString().toUpperCase().contains(recherche.toUpperCase());
+        }
 
 
     }
