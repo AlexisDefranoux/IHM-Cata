@@ -35,9 +35,9 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button fx:id="btnDeclarerIncident" accessibleRole="IMAGE_VIEW" layoutX="699.0" layoutY="65.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="187.0" text="Déclarer un incident" />
-      <TextField fx:id="inputRecherche" layoutX="14.0" layoutY="69.0" prefHeight="25.0" prefWidth="145.0" />
-      <Button fx:id="btnRechercher" layoutX="170.0" layoutY="69.0" mnemonicParsing="false" text="Rechercher dans" />
+      <Button fx:id="btnDeclarerIncident" accessibleRole="IMAGE_VIEW" layoutX="696.0" layoutY="69.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="187.0" text="Déclarer un incident" />
+      <TextField fx:id="inputRecherche" layoutX="14.0" layoutY="69.0" prefHeight="25.0" prefWidth="145.0" promptText="Mot clé" />
+      <Button fx:id="btnRechercher" layoutX="324.0" layoutY="69.0" mnemonicParsing="false" text="Rechercher" />
       <ImageView fitHeight="50.0" fitWidth="100.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/images/P_Polytech.png" />
@@ -49,9 +49,9 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <CheckBox fx:id="mesIncidents" layoutX="488.0" layoutY="74.0" mnemonicParsing="false" text="Voir mes incidents" />
+      <CheckBox fx:id="mesIncidents" layoutX="498.0" layoutY="73.0" mnemonicParsing="false" text="Voir mes incidents" />
        <Text fx:id="login" layoutX="662.0" layoutY="24.0" text="dsfsdf" textAlignment="RIGHT" wrappingWidth="199.00000376999378" />
        <Hyperlink fx:id="lienDeconnexion" layoutX="789.0" layoutY="28.0" prefHeight="23.0" prefWidth="99.0" text="Déconnexion" textAlignment="RIGHT" />
-      <ComboBox fx:id="comboCol" layoutX="311.0" layoutY="69.0" prefWidth="150.0" />
+      <ComboBox fx:id="comboCol" layoutX="172.0" layoutY="69.0" prefHeight="25.0" prefWidth="138.0" />
    </children>
 </AnchorPane>

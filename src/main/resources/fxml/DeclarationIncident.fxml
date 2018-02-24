@@ -38,13 +38,13 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="Titre*" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="Titre *" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
       <TextField fx:id="idTitre" GridPane.columnIndex="2" GridPane.rowIndex="1" />
       <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="Description" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
       <TextArea fx:id="idDescription" prefHeight="44.0" prefWidth="672.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
       <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="Catégorie" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
       <ComboBox fx:id="idCategorie" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-      <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="Localisation*" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+      <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="Localisation *" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
       <TextField fx:id="idLocalisation" GridPane.columnIndex="2" GridPane.rowIndex="4" />
       <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="Date" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
       <GridPane GridPane.columnIndex="2" GridPane.rowIndex="5">
@@ -89,6 +89,9 @@
          </children>
       </GridPane>
       <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="Urgent" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+      <CheckBox fx:id="idUrgence" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <Text fill="#111010" strokeType="OUTSIDE" strokeWidth="0.0" text="* Champs obligatoires" wrappingWidth="147.2490234375" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+      <Text fx:id="iderreur" fill="#f50505" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez remplir les champs en rouge" textAlignment="CENTER" visible="false" wrappingWidth="593.2490234375" GridPane.columnIndex="2" GridPane.rowIndex="7" />
       <GridPane GridPane.columnSpan="4" GridPane.rowIndex="8">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -100,11 +103,8 @@
          <children>
             <Button fx:id="idAnnuler" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Annuler" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
             <Button fx:id="idValider" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Valider" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <CheckBox fx:id="idRedeclarer" mnemonicParsing="false" text="Redéclarer incident" GridPane.columnIndex="1" />
+            <CheckBox fx:id="idRedeclarer" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="Déclarer un autre incident" textAlignment="RIGHT" GridPane.columnIndex="1" />
          </children>
       </GridPane>
-      <CheckBox fx:id="idUrgence" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-      <Text fill="#111010" strokeType="OUTSIDE" strokeWidth="0.0" text="* Champ Obligatoire" wrappingWidth="147.2490234375" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7" />
-      <Text fx:id="iderreur" fill="#f50505" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez remplir les champs en rouge" textAlignment="CENTER" visible="false" wrappingWidth="593.2490234375" GridPane.columnIndex="2" GridPane.rowIndex="7" />
    </children>
 </GridPane>
