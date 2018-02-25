@@ -91,6 +91,9 @@ public class HomeController {
         String temp = Session.getInstance().getEmail();
         login.setText(temp);
 
+        Incidents.getInstance().getIncidentsAfficher().clear();
+        Incidents.getInstance().getIncidentsAfficher().addAll(Incidents.getInstance().getIncidentsAll());
+
         btnDeclarerIncident.setOnMouseClicked(event -> {
             FXMLLoader loader = new FXMLLoader();
             try {
