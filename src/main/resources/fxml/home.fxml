@@ -20,13 +20,13 @@
    <children>
       <TableView fx:id="table" layoutY="108.0" prefHeight="492.0" prefWidth="900.0" tableMenuButtonVisible="true" AnchorPane.leftAnchor="0.0">
         <columns>
-          <TableColumn fx:id="clnDate" prefWidth="103.66666412353516" text="Date" />
+          <TableColumn fx:id="clnDate" text="Date" />
           <TableColumn fx:id="clnImportance" minWidth="0.0" prefWidth="124.66667175292969" text="Importance" />
             <TableColumn fx:id="clnTitre" prefWidth="113.33332824707031" text="Titre" />
-            <TableColumn fx:id="clnCategorie" prefWidth="166.66665649414062" text="Catégorie" />
+            <TableColumn fx:id="clnCategorie" prefWidth="100.0" text="Catégorie" />
             <TableColumn fx:id="clnLieu" prefWidth="143.33334350585938" text="Lieu" />
             <TableColumn fx:id="clnDescription" prefWidth="252.66668701171875" text="Description" />
-            <TableColumn fx:id="clnEtat" prefWidth="103.66666412353516" text="Etat" />
+            <TableColumn fx:id="clnEtat" prefWidth="65.0" text="Etat" />
         </columns>
          <padding>
             <Insets bottom="10.0" />
