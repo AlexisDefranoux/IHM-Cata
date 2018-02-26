@@ -163,7 +163,6 @@ public class DeclarationIncidentController {
         for(Categorie c : Categorie.values()){
             idCategorie.getItems().add(c);
         }
-        idCategorie.setValue(Categorie.values()[0]);
 
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String dat = dateFormat.format(actuelle);

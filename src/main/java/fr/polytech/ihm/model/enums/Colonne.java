@@ -1,13 +1,13 @@
 package fr.polytech.ihm.model.enums;
 
-public enum Colone {
+public enum Colonne {
     TITRE("Titre"),
     CATEGORIE("Catégorie"),
     LIEU("Lieu"),
     DESCRIPTION("Description");
 
     private String name;
-    Colone(String name){
+    Colonne(String name){
         this.name = name;
     }
 

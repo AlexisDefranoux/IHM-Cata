@@ -3,11 +3,9 @@ package fr.polytech.ihm.controller;
 import fr.polytech.ihm.model.Incident;
 import fr.polytech.ihm.model.Incidents;
 import fr.polytech.ihm.model.Session;
-import fr.polytech.ihm.model.enums.Categorie;
-import fr.polytech.ihm.model.enums.Colone;
+import fr.polytech.ihm.model.enums.Colonne;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -17,10 +15,7 @@ import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import java.io.IOException;
-import java.util.Date;
 
 public class HomeController {
 
@@ -74,7 +69,7 @@ public class HomeController {
 
     public void initialize(){
 
-        for(Colone colone : Colone.values()){
+        for(Colonne colone : Colonne.values()){
             comboCol.getItems().add(colone.getName());
         }
         comboCol.setValue("Titre");
